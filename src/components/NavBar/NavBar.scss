@@ -31,6 +31,21 @@
                 object-fit: cover;
                 cursor: pointer;
             }
+            .icon{
+                margin: 0px 15px;
+                cursor: pointer;
+            }
+            .profile{
+                .options{
+                    display: none;
+                }
+                &:hover{
+                    .options{
+                        display: flex;
+                        flex-direction: column;
+                    }
+                }
+            }
         }
     }
 }
