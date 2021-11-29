@@ -1,3 +1,36 @@
 .navbar{
     color: white;
+    font-size: 14px;
+    .container{
+        display: flex;
+        align-items: center;
+        padding: 0px 50px;
+        justify-content: space-between;
+        height: 70px;
+
+        .left{
+            display: flex;
+            align-items: center;
+            img{
+                height: 25px;
+                margin-right: 40px;
+            }
+            span{
+                margin-right: 20px;
+                cursor: pointer;
+            }
+        }
+
+        .right{
+            display: flex;
+            align-items: center;
+            img{
+                width: 45px;
+                height: 45px;
+                border-radius: 5px;
+                object-fit: cover;
+                cursor: pointer;
+            }
+        }
+    }
 }

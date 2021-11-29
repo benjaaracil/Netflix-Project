@@ -1,5 +1,6 @@
 import "./NavBar.scss"
 import React from 'react';
+import { ArrowDropDown, Notifications, Search } from "@material-ui/icons";
 
 export default function NavBar() {
     return (
@@ -14,9 +15,15 @@ export default function NavBar() {
                     <span>Series</span>
                     <span>Movies</span>
                     <span>New and Popular</span>
-                    <span>Homepage</span>
+                    <span>My List</span>
                 </div>
-                <div className="right"></div>
+                <div className="right">
+                    <Search/>
+                    <span>KID</span>
+                    <Notifications/>
+                    <img src="https://lh3.googleusercontent.com/ogw/ADea4I7U6GjOyfNZtuj5Q0aehXxaUTrshmML3AVua12xcQ=s192-c-mo" alt="" />
+                    <ArrowDropDown/>
+                </div>
             </div>
         </div>
     )
