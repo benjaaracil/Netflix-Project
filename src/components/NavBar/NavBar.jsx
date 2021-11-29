@@ -1,10 +1,18 @@
 import "./NavBar.scss"
 import React from 'react';
+import {useState} from 'react';
 import { ArrowDropDown, Notifications, Search } from "@material-ui/icons";
 
 export default function NavBar() {
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    window.onscroll = () => {
+        setIsScrolled(window.pageYOffset === 0 ? false : true); //al scrollear se setea en true, si vuelve de nuevo arriba se setea en false. Esto para cambiar el color del navbar
+        return () => (window.onscroll = null);
+    }
+    // console.log(isScrolled);
     return (
-        <div className="navbar">
+        <div className={isScrolled ? "navbar scrolled" : "navbar"}>
             <div className="container">
                 <div className="left">
                     <img 

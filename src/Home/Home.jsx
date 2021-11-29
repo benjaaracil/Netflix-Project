@@ -8,7 +8,7 @@ export default function Home() {
         <div className="home">
             <NavBar/>
             <img 
-                    src="https://lh3.googleusercontent.com/ogw/ADea4I7U6GjOyfNZtuj5Q0aehXxaUTrshmML3AVua12xcQ=s192-c-mo" 
+                    src="https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2018/06/series-netflix.jpg?itok=e_UM8TMx" 
                     alt="" 
                     width="100%"
             />
