@@ -8,6 +8,7 @@
     z-index: 999;
     //
     background: linear-gradient(to top, transparent 0%, rgb(0,0,0,0.4) 50%); //Detalle de la NavBar
+    transition:all .7s ease-in-out;
 
     &.scrolled{
         background: var(--main-color);
