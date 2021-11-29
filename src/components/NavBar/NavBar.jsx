@@ -21,7 +21,9 @@ export default function NavBar() {
                     <Search className="icon"/>
                     <span>KID</span>
                     <Notifications className="icon"/>
-                    <img src="https://lh3.googleusercontent.com/ogw/ADea4I7U6GjOyfNZtuj5Q0aehXxaUTrshmML3AVua12xcQ=s192-c-mo" alt="" />
+                    <img 
+                    src="https://lh3.googleusercontent.com/ogw/ADea4I7U6GjOyfNZtuj5Q0aehXxaUTrshmML3AVua12xcQ=s192-c-mo" 
+                    alt="" />
                     <div className="profile">
                         <ArrowDropDown className="icon"/>
                         <div className="options">

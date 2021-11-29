@@ -1,6 +1,12 @@
 .navbar{
+    width: 100%;
     color: white;
     font-size: 14px;
+    //Clave para que la NavBar quede siempre arriba por más que scrolleemos la pagina
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    //
     .container{
         display: flex;
         align-items: center;
@@ -37,13 +43,20 @@
             }
             .profile{
                 .options{
-                    display: none;
+                    display: none; //Clave para que no se muestre el select
+                    background-color: var(--main-color);
+                    border-radius: 5px;
                 }
                 &:hover{
                     .options{
                         display: flex;
-                        flex-direction: column;
+                        flex-direction: column;    //Se despliega el select cuando pasamos el cursor
+                        position: absolute;
                     }
+                }
+                span{
+                    padding: 10px;
+                    cursor: pointer;
                 }
             }
         }
