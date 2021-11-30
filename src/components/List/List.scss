@@ -13,8 +13,11 @@
         position: relative;
         .container{
             margin-left: 50px;
+            margin-top: 10px;
             display: flex;
             width: max-content;
+            transition: all 1s ease;
+            transform: translateX(0px); //Para que se mueva el carrusel de imagenes
         }
 
         .sliderArrow{
@@ -23,12 +26,17 @@
             background-color: rgb(20, 20, 20, 0.5);
             color: white;
             position: absolute;
+            z-index: 99;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            cursor: pointer;
 
             &.left{
                 left:0;
             }
 
-            &right{
+            &.right{
                 right: 0;
             }
         }

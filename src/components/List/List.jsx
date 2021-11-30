@@ -1,15 +1,34 @@
 import "./List.scss";
-import React from 'react';
+import {React, useRef, useState} from 'react';
 import ListItem from "../ListItem/ListItem";
 import { ArrowBackIosOutlined, ArrowForwardIosOutlined } from "@material-ui/icons";
 
 export default function List() {
+    const [slideNumber, setSlideNumber] = useState(0) //Esto nos va a servir para que no se pueda seguir moviendo el "carrusel" si no hay mas elementos hacia la izquierda o derecha
+
+
+    const listRef = useRef(); //En vez de usar elementById o algo similar uso el hook useRef de react para hacer referencia a ese componente
+
+    const handleClick = (direction) => {
+        let distance = listRef.current.getBoundingClientRect().x - 50;
+        // console.log(distance) La funcion de la linea 10 nos permite saber la distancia exacta de los elementos en pantalla. 
+
+        if (direction === "left" && slideNumber > 0) {
+            setSlideNumber(slideNumber-1) 
+            listRef.current.style.transform = `translateX(${230 + distance}px)`    //Boton funcional para que la lista se mueva hacia la derecha (230 px ya que es lo que ocupa un <ListItem/> y el distance que lo declaramos arriba, esto permite que los elementos se muevan siempre la misma cantidad de pixeles)
+        }
+        else if (direction === "right" && slideNumber < 5){
+            setSlideNumber(slideNumber+1)
+            listRef.current.style.transform = `translateX(${-230 + distance}px)`
+        }
+    }
+
     return (
         <div className="list">
             <span className="listTitle">Continue to watch</span>
             <div className="wrapper">
-                <ArrowBackIosOutlined className="sliderArrow left"/>
-                <div className="container">
+                <ArrowBackIosOutlined className="sliderArrow left" onClick={() => handleClick("left")}/>
+                <div className="container" ref={listRef}>
                     <ListItem/>
                     <ListItem/>
                     <ListItem/>
@@ -22,7 +41,7 @@ export default function List() {
                     <ListItem/>
                     <ListItem/>
                 </div>
-                <ArrowForwardIosOutlined className="sliderArrow right"/>
+                <ArrowForwardIosOutlined className="sliderArrow right" onClick={() => handleClick("right")}/>
             </div>
         </div>
     )
