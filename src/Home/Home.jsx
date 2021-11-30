@@ -8,7 +8,7 @@ export default function Home() {
     return (
         <div className="home">
             <NavBar/>
-            <Featured/>
+            <Featured type="movies"/>
         </div>
     )
 }
