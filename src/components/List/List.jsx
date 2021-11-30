@@ -5,11 +5,12 @@ import { ArrowBackIosOutlined, ArrowForwardIosOutlined } from "@material-ui/icon
 
 export default function List() {
     const [slideNumber, setSlideNumber] = useState(0) //Esto nos va a servir para que no se pueda seguir moviendo el "carrusel" si no hay mas elementos hacia la izquierda o derecha
-
+    const [isMove, setIsMoved] = useState(false); //Para desvanecer el botón de ir hacia atras si estamos en el primer elemento...
 
     const listRef = useRef(); //En vez de usar elementById o algo similar uso el hook useRef de react para hacer referencia a ese componente
 
     const handleClick = (direction) => {
+        setIsMoved(true);
         let distance = listRef.current.getBoundingClientRect().x - 50;
         // console.log(distance) La funcion de la linea 10 nos permite saber la distancia exacta de los elementos en pantalla. 
 
@@ -27,7 +28,11 @@ export default function List() {
         <div className="list">
             <span className="listTitle">Continue to watch</span>
             <div className="wrapper">
-                <ArrowBackIosOutlined className="sliderArrow left" onClick={() => handleClick("left")}/>
+                <ArrowBackIosOutlined 
+                className="sliderArrow left" 
+                onClick={() => handleClick("left")}
+                style={{display: !isMove && "none"}} //Si no esta movido, osea es false, que no se muestre (por eso el &&)
+                />
                 <div className="container" ref={listRef}>
                     <ListItem/>
                     <ListItem/>
@@ -41,7 +46,10 @@ export default function List() {
                     <ListItem/>
                     <ListItem/>
                 </div>
-                <ArrowForwardIosOutlined className="sliderArrow right" onClick={() => handleClick("right")}/>
+                <ArrowForwardIosOutlined 
+                className="sliderArrow right" 
+                onClick={() => handleClick("right")}
+                />
             </div>
         </div>
     )
