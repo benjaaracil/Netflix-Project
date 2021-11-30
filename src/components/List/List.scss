@@ -1,0 +1,36 @@
+.list{
+    width: 100%;
+    margin-top: 10px;
+
+    .listTitle{
+        color: white;
+        font-size: 20px;
+        font-weight: 500;
+        margin-left: 50px;
+    }
+
+    .wrapper{
+        position: relative;
+        .container{
+            margin-left: 50px;
+            display: flex;
+            width: max-content;
+        }
+
+        .sliderArrow{
+            width: 50px;
+            height: 100px;
+            background-color: rgb(20, 20, 20, 0.5);
+            color: white;
+            position: absolute;
+
+            &.left{
+                left:0;
+            }
+
+            &right{
+                right: 0;
+            }
+        }
+    }
+}
