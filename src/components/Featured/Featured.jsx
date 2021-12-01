@@ -27,7 +27,7 @@ export default function Featured({type}) {
                 </div> 
             )}
             <img 
-                src="https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2018/06/series-netflix.jpg?itok=e_UM8TMx" 
+                src="https://ecuadorcomunicacion.com/wp-content/uploads/2020/08/matrix.jpg" 
                 alt="" 
                 // width="100%"
             />
