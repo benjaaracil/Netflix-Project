@@ -22,7 +22,7 @@ export default function NavBar() {
                     <span>Homepage</span>
                     <span>Series</span>
                     <span>Movies</span>
-                    <span>New and Popular</span>
+                    <span>New & Popular</span>
                     <span>My List</span>
                 </div>
                 <div className="right">

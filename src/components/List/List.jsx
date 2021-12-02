@@ -3,7 +3,7 @@ import {React, useRef, useState} from 'react';
 import ListItem from "../ListItem/ListItem";
 import { ArrowBackIosOutlined, ArrowForwardIosOutlined } from "@material-ui/icons";
 
-export default function List() {
+export default function List({name}) {
     const [slideNumber, setSlideNumber] = useState(0) //Esto nos va a servir para que no se pueda seguir moviendo el "carrusel" si no hay mas elementos hacia la izquierda o derecha
     const [isMove, setIsMoved] = useState(false); //Para desvanecer el botón de ir hacia atras si estamos en el primer elemento...
 
@@ -26,7 +26,7 @@ export default function List() {
 
     return (
         <div className="list">
-            <span className="listTitle">Continue to watch</span>
+            <span className="listTitle">{name}</span>
             <div className="wrapper">
                 <ArrowBackIosOutlined 
                 className="sliderArrow left" 
@@ -45,6 +45,8 @@ export default function List() {
                     <ListItem index = {8}/>
                     <ListItem index = {9}/>
                     <ListItem index = {10}/>
+                    <ListItem index = {11}/>
+                    <ListItem index = {12}/>
                 </div>
                 <ArrowForwardIosOutlined 
                 className="sliderArrow right" 

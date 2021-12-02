@@ -10,9 +10,9 @@ export default function Home() {
         <div className="home">
             <NavBar/>
             <Featured type="movie"/>
-            <List/>
-            <List/>
-            <List/>
+            <List name={"Popular on Netflix"}/>
+            <List name={"Continue Watching for Benja"}/>
+            <List name={"Trending now"}/>
         </div>
     )
 }

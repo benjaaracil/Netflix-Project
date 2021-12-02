@@ -37,7 +37,7 @@ export default function Featured({type}) {
                     alt="" 
                 />
                 <span className="desc">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo, doloremque expedita. Vero, aspernatur culpa incidunt doloremque, explicabo nulla possimus dicta exercitationem, mollitia officia facilis. Voluptate velit laborum possimus exercitationem doloribus!
+                El programador informático Thomas Anderson, más conocido en el mundo de los "hacker" como Neo, está en el punto de mira del temible agente Smith. Otros dos piratas informáticos, Trinity y Morfeo, se ponen en contacto con Neo para ayudarlo a escapar. Matrix te posee. Sigue al conejo blanco.
                 </span>
                 <div className="buttons">
                     <button className="play">
