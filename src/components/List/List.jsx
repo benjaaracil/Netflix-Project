@@ -55,7 +55,7 @@ if (movies != undefined){
                         <ListItem 
                             index = {indice++}
                             title = {movie.title}
-                            img = {portada + movie.backdrop_path}
+                            img = {portada + movie.poster_path}
                             description = {movie.overview}
                             score = {movie.vote_average}
                         />
