@@ -9,6 +9,7 @@ export default function List({name}) {
     const [isMove, setIsMoved] = useState(false); //Para desvanecer el botón de ir hacia atras si estamos en el primer elemento...
     const listRef = useRef(); //En vez de usar elementById o algo similar uso el hook useRef de react para hacer referencia a ese componente
     const [movies, setMovies] = useState();
+    let portada = "https://image.tmdb.org/t/p/w500"
     let indice = 0;
 
     const handleClick = (direction) => {
@@ -51,7 +52,13 @@ if (movies != undefined){
                 />
                 <div className="container" ref={listRef}>
                     {movies.map((movie) => (
-                        <ListItem index = {indice++}/>
+                        <ListItem 
+                            index = {indice++}
+                            title = {movie.title}
+                            img = {portada + movie.backdrop_path}
+                            description = {movie.overview}
+                            score = {movie.vote_average}
+                        />
                     ))}
                     {/* <ListItem index = {0}/>
                     <ListItem index = {1}/>
