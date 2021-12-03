@@ -1,7 +1,7 @@
 import "./ListItem.scss"
 import { React, useState } from 'react';
 import { Add, PlayArrow, ThumbDownAltOutlined, ThumbUpAltOutlined } from "@material-ui/icons";
-import trailer from "../../videos&images/trailer.mp4"
+import trailer from "../../videos&images/trailer.mp4";
 
 export default function ListItem({ index }) { //El index que recibe es de cada <ListItem correspondiente, de esta manera vamos a poder centrar el hover correspondiente a cada cajita (pelicula)
     const [isHovered, setIsHovered] = useState(); //Estado para ver si el mouse está encima de alguna o no... 
