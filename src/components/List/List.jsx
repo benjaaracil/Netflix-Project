@@ -19,7 +19,7 @@ export default function List({name, movies}) {
             setSlideNumber(slideNumber-1) 
             listRef.current.style.transform = `translateX(${230 + distance}px)`    //Boton funcional para que la lista se mueva hacia la derecha (230 px ya que es lo que ocupa un <ListItem/> y el distance que lo declaramos arriba, esto permite que los elementos se muevan siempre la misma cantidad de pixeles)
         }
-        else if (direction === "right" && slideNumber < 5){
+        else if (direction === "right" && slideNumber < 10){
             setSlideNumber(slideNumber+1)
             listRef.current.style.transform = `translateX(${-230 + distance}px)`
         }
