@@ -1,6 +1,5 @@
 import "./Home.scss";
 import {React, useRef, useState, useEffect} from 'react';
-import { AcUnit } from "@material-ui/icons";
 import NavBar from "../components/NavBar/NavBar"
 import Featured from "../components/Featured/Featured";
 import List from "../components/List/List";
@@ -37,13 +36,6 @@ export default function Home() {
             // react on errors.
             console.error(errors)
           })
-
-
-        // .then((response) => {
-        //     setMovies(response.data.results)
-        //     console.log("Dentro del getMovies", movies)
-        // })
-        // .catch((err) => console.error(err));
     };
 
 
