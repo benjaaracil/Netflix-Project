@@ -1,5 +1,5 @@
 import "./Home.scss";
-import {React, useRef, useState, useEffect} from 'react';
+import {React, useState, useEffect} from 'react';
 import NavBar from "../components/NavBar/NavBar"
 import Featured from "../components/Featured/Featured";
 import List from "../components/List/List";
@@ -15,12 +15,12 @@ export default function Home() {
     const requestOne = axios.get(url1);
     const requestTwo = axios.get(url2);
     const requestThree = axios.get(url3);
-
-
+    
+    
     useEffect(() => {
         getMovies()
     }, [])
-
+    
     const getMovies = () => {
         axios.all([requestOne, requestTwo, requestThree]).then(axios.spread((...responses) => {
             const responseOne = responses[0]
@@ -30,15 +30,15 @@ export default function Home() {
             setMovies(responseOne.data.results)
             setMovies1(responseTwo.data.results)
             setMovies2(responesThree.data.results)
-            console.log("Primera", responseOne.data.results)
-            console.log("Segunda", responseTwo.data.results) 
-          })).catch(errors => {
+            // console.log("Primera", responseOne.data.results)
+            // console.log("Segunda", responseTwo.data.results) 
+        })).catch(errors => {
             // react on errors.
             console.error(errors)
-          })
+        })
     };
-
-
+    
+    
     return (
         <div className="home">
             <NavBar/>

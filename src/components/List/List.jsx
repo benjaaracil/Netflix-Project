@@ -25,7 +25,7 @@ export default function List({name, movies}) {
         }
     }
 
-if (movies != undefined){
+if (movies !== undefined){
     return (
         <div className="list">
             <span className="listTitle">{name}</span>

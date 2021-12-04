@@ -1,25 +1,25 @@
 import "./ListItem.scss"
 import { React, useState, useEffect } from 'react';
 import { Add, PlayArrow, ThumbDownAltOutlined, ThumbUpAltOutlined } from "@material-ui/icons";
-import trailer from "../../videos&images/trailer.mp4";
-import axios from "axios";
+// import trailer from "../../videos&images/trailer.mp4";
+import api from "../../api"
 
 export default function ListItem({ index, title, img, description, score, id }) { //El index que recibe es de cada <ListItem correspondiente, de esta manera vamos a poder centrar el hover correspondiente a cada cajita (pelicula)
     const [isHovered, setIsHovered] = useState(); //Estado para ver si el mouse está encima de alguna o no... 
     const [video, setVideo] = useState();
     const urlVideos = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=6d576e164fd97d2d38823c27321b1b21&language=en-US`
 
-    // useEffect(() => {
-    //     getTrailer()
-    // }, [])
+    useEffect(() => {
+        getTrailer()
+    }, [])
 
     const getTrailer = () => {
-        return axios.get(urlVideos)
+        return api.get(urlVideos)
         .then((response) => {
             let trailerResponse = response.data.results.find(video => video.type = "Trailer");
-            let videoTrailer = `https://www.youtube.com/embed/${trailerResponse.key}`;
-            console.log(videoTrailer)
-            // setVideo(videoTrailer)
+            let videoTrailer = `https://www.youtube.com/embed/${trailerResponse.key}?autoplay=1`;
+            // console.log(videoTrailer)
+            setVideo(videoTrailer)
         })
         .catch((err) => console.error(err))
     }
@@ -34,7 +34,8 @@ export default function ListItem({ index, title, img, description, score, id }) 
                 alt="" />
             {isHovered && (
                 <>
-                    <video src={video} autoPlay={true} loop />
+                    {/* <video src={trailer} autoPlay={true} loop /> */}
+                    <iframe src={video} allow = "autoplay"/>
 
                     <div className="itemInfo">
                         <div className="icons">

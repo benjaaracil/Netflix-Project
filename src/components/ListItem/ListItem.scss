@@ -22,6 +22,16 @@
         left: 0;
     }
 
+    iframe{
+        width: 100%;
+        height: 140px;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-color: black;
+    }
+
     &:hover{
         width: 325px;
         height: 420px;
