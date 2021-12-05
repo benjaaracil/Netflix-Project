@@ -4,18 +4,21 @@ import NavBar from "../components/NavBar/NavBar"
 import Featured from "../components/Featured/Featured";
 import List from "../components/List/List";
 import axios from "axios";
+require('dotenv').config()
+
+const apiKey = process.env.REACT_APP_API_KEY;
 
 export default function Home() {
     const [movies, setMovies] = useState();
     const [movies1, setMovies1] = useState();
     const [movies2, setMovies2] = useState();
-    let url1 =`https://api.themoviedb.org/3/discover/movie?api_key=6d576e164fd97d2d38823c27321b1b21&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=1&with_watch_monetization_types=flatrate`;
-    let url2 = `https://api.themoviedb.org/3/discover/movie?api_key=6d576e164fd97d2d38823c27321b1b21&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=2&with_watch_monetization_types=flatrate`;
-    let url3 = `https://api.themoviedb.org/3/discover/movie?api_key=6d576e164fd97d2d38823c27321b1b21&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=3&with_watch_monetization_types=flatrate`;
+    let url1 =`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=1&with_watch_monetization_types=flatrate`;
+    let url2 = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=2&with_watch_monetization_types=flatrate`;
+    let url3 = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=3&with_watch_monetization_types=flatrate`;
     const requestOne = axios.get(url1);
     const requestTwo = axios.get(url2);
     const requestThree = axios.get(url3);
-    
+    console.log("APIKEY", apiKey)
     
     useEffect(() => {
         getMovies()
